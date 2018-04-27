@@ -17,15 +17,14 @@ $(document).ready(()=>{
             tagmode: 'any',
             format: 'json'
         }).done((data)=>{
-            console.log('done');
-            render(data);
+            renderPage(data);
         }).fail((err)=>{
-            console.log('Error ! ', err);
+            throw `HTTP GET Error`;
         });
     }
 
     // render GET result on the DOM
-    const render = (data)=>{
+    const renderPage = (data)=>{
         $('#flickrItems').empty();
         $.each(data.items, (index, item)=>{
             filterResult = filterWithRegEx(item.link, item.author, item.date_taken);
@@ -44,17 +43,14 @@ $(document).ready(()=>{
         let findImageId = new RegExp('\\/\\d\+\\/'); 
         let authorPage = imgOriginalSize.replace(findImageId,''); // ...flickr.com/photos/AuthorName/123/ --> ...flickr.com/photos/AuthorName
         let findAuthorName = /\(([^)]+)\)/;
-        let authorName = findAuthorName.exec(author)[1].replace(/['"]+/g, ''); // replace remove the quotes;
+        let authorName = findAuthorName.exec(author)[1].replace(/['"]+/g, ''); // replace func removing the quotes;
         let findTheDate = /\d{4}[-]\d{2}[-]\d{2}/;
         let imageDayTaken = findTheDate.exec(fullDate)[0];
         return {
-            authorPage: authorPage,
-            authorName: authorName,
-            imageDayTaken: imageDayTaken
+            authorPage,
+            authorName,
+            imageDayTaken
         }
     }
 
 });
-
-
-// https://www.flickr.com/photos/test/40790924705/
