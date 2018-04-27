@@ -1,0 +1,105 @@
+body{
+    font-family: "Segoe UI",Arial,sans-serif;
+    box-sizing: border-box;
+    background-color:#5996b7;
+}
+.header > h1{
+    text-align: center;
+    color:#59f884;
+    padding-bottom: 30px;
+}
+#tagsInput{
+    height: 72px;
+    width: 30%;
+    padding: 0%;
+    border: 1px solid black;
+    background-color:#6ff74a;
+    border-radius: 15px;
+}
+#searchBtn{
+    width: 25%;
+    padding: 15px 25px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #6ff74a;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+#searchBtn:hover{
+    background-color: #3e8e41;
+}
+#searchBtn:active{
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.imgTitle{
+    color: #78ccff;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    max-height: 50px;
+    overflow-y: auto;
+}
+.itemContainer{
+    height: 320px;
+    width: 14%;
+    float: left;
+    background-color:lightgray;
+    border: 2px solid #01FF70;
+    position: relative;
+    animation: 3.5s backCng ease-in-out;
+}
+.thumbnail{
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin:auto;
+    display: inline-block;
+    width:auto;
+    height:auto;
+    position: absolute;
+}
+.author, .date{
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    /* margin: 10px; */
+    bottom: 20px;
+    
+}
+.author{
+    left: 10px;
+    max-width: 50%;
+    max-height: 25px;
+    overflow-x: auto;
+}
+.date{
+    right: 20px; 
+}
+
+@media only screen and (max-width: 1780px) {
+    .itemContainer, #tagsInput, #searchBtn{
+        width: 17%;
+    } 
+}
+@media only screen and (max-width: 1450px) {
+    .itemContainer, #tagsInput, #searchBtn{
+        width: 31%;
+    } 
+}
+@media only screen and (max-width: 830px) {
+    .itemContainer, #tagsInput, #searchBtn{
+        width: 48%;
+    } 
+}
+@media only screen and (max-width: 550px) {
+    .itemContainer, #tagsInput, #searchBtn{
+        width: 100%;
+    } 
+}
