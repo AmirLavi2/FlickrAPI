@@ -1,4 +1,4 @@
-$(document).ready(()=>{
+$(()=>{
 
     // get form result
     $("#searchImagesByTags").submit((event)=>{
